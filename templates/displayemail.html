@@ -1,0 +1,10 @@
+
+    {% if email_list %}
+        {% for msg in email_list %}
+            {{ msg }}
+        {% endfor %}
+    {% else %}
+        {{ "No email found" }}
+
+    {% endif %}
+

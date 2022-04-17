@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hacker_chat email</title>
+
+    <style>
+        body{
+            background-color: black;
+            color: chartreuse;
+        }
+        .login_form{
+            width: 500px;
+            padding: 50px;
+            margin-left: 90px;
+            margin-top:5%;
+            text_align: center;
+            border-color: chartreuse;
+            color: aliceblue;
+            font-family: "Andale Mono";
+        }
+        .headings{
+            color:chartreuse;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="email_form"><!--form for email-->
+        <h1 class="headings">HACKER_CHAT EMAIL :</h1>
+        <form class="email_form">
+            <h3>This form assumes user is previously verified with password</h3>
+
+            <label for="username">username:</label>
+            <input type="text" id="username" name="username"><br><br>
+
+            {% for label, command in commands.items() %}
+                <button class="command command-{{ command }}" value="{{ command }}">
+                    {{ label }}
+                </button>
+            {% endfor %}
+        </form>
+        <script>
+            // Only run what comes next *after* the page has loaded
+            addEventListener("DOMContentLoaded", function() {
+            var commandButtons = document.querySelectorAll(".command");
+            for (var i=0, l=commandButtons.length; i<l; i++) {
+                var button = commandButtons[i];
+                // For each button, listen for the "click" event
+                button.addEventListener("click", function(e) {
+                // When a click happens, stop the button
+                // from submitting our form (if we have one)
+                e.preventDefault();
+
+                var clickedButton = e.target;
+                var command = clickedButton.value;
+                var request = new XMLHttpRequest();
+                request.onload = function() {
+                // We could do more interesting things with the response
+                // or, we could ignore it entirely
+                    alert(request.responseText);
+                };
+                command1 = username.value + ")(" + command;
+                 // We point the request at the appropriate command
+                    request.open("GET", "/" + command1, true);
+                // send it off
+                request.send();
+
+            });
+        }
+    }, true);
+</script>
+
+    </div>
+</body>
+</html>

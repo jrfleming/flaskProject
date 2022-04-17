@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hacker_chat sign_up</title>
+
+    <style>
+        body{
+            background-color: black;
+            color: chartreuse;
+        }
+        .login_form{
+            width: 500px;
+            padding: 50px;
+            margin-left: 90px;
+            margin-top:5%;
+            text_align: center;
+            border-color: chartreuse;
+            color: aliceblue;
+            font-family: "Andale Mono";
+        }
+        .headings{
+            color:chartreuse;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login_form"><!--form for login-->
+        <h1 class="headings">HACKER_CHAT:</h1>
+        <h3 class="headings">welcome back: login</h3>
+
+        <form class="login_form">
+            <label for="username">user_name:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">password:</label>
+            <input type="text" id="password" name="password"><br><br>
+            <input type="submit" value="enter" onclick="window.location.href='../finalGroupProject/dashboard_screen.html';">
+        </form>
+        <button type="button" onclick="window.location.href='../finalGroupProject/welcome_page.html';"><h3 class="headings">return</h3>
+        </button>
+    </div>
+</body>
+</html>
